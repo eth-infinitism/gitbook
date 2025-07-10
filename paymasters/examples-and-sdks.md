@@ -1,0 +1,80 @@
+---
+title: Examples and SDKs
+description: Real-world Paymaster implementations and developer tooling.
+sidebar_position: 5
+---
+
+# Paymasters: Examples and SDKs
+
+This page highlights production-grade Paymasters and SDKs across the ecosystem. These projects illustrate real-world implementations, from verifying Paymasters to ERC-20 token gas payment infrastructure.
+
+---
+
+## 🔧 Pimlico
+
+[Pimlico](https://docs.pimlico.io/references/paymaster) offers a robust Paymaster infrastructure:
+- Verifying Paymaster with off-chain signed approvals
+- ERC-20 Paymaster for gas-in-token UX
+- Free and sponsored tiers
+- Full `UserOperation` simulation tooling
+
+Pimlico is among the most battle-tested paymaster providers in ERC-4337 today.
+
+---
+
+## 🔧 Etherspot
+
+[Etherspot](https://etherspot.io/arka-paymaster/) includes:
+- Paymaster-as-a-service with support for verifying and quota-based modes
+- SDK integrations for onboarding and token support
+- Rollup-friendly architecture
+
+Their system integrates seamlessly with their smart wallet framework.
+
+---
+
+## 🔧 Alchemy
+
+[Alchemy](https://www.alchemy.com/docs/gas-manager-services) provides:
+- Simplified paymaster flow in their AA SDK
+- Support for pay-per-use and freemium patterns
+- Integrated bundling and sponsorship
+
+---
+
+## 🔧 Circle (USDC Paymaster)
+
+[Circle](https://www.circle.com/paymaster) announced a Paymaster that allows users to pay gas in **USDC**:
+- Native stablecoin integration
+- Focused on enterprise and wallet UX
+- Currently live on testnets with plans for expansion
+
+This makes stablecoin-based UX far more accessible.
+
+---
+
+## 🔬 Visa Paymaster Experiment
+
+[Visa](https://usa.visa.com/solutions/crypto/paying-blockchain-gas-fees-with-card.html) conducted an experiment to sponsor gas payments using a Visa card:
+- Uses an off-chain verifier for authorization
+- Settles fees via card-based payment rails
+- Not production-ready, but a strong signal of ecosystem interest
+
+While not dev-ready, it underscores major institutional exploration.
+
+---
+
+## 🔧 ZeroDev
+
+[ZeroDev](https://docs.zerodev.app/) includes:
+- Fully integrated Paymaster support in their AA SDK
+- Gasless onboarding templates
+- Pluggable backend logic for custom rules
+
+Good fit for developers seeking end-to-end smart wallet + paymaster integration.
+
+---
+
+## ✅ Summary
+
+From token-based gas models to off-chain verified sponsorship, Paymasters are becoming production-grade thanks to services like Pimlico, Etherspot, and Circle. Choose your tooling based on how much control, abstraction, or UX fidelity you need.
