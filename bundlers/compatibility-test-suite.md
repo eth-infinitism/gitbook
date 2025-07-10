@@ -30,7 +30,7 @@ The tests simulate a wide variety of `UserOperations`, from valid edge cases to 
 
 Test results are tracked live at:
 
-👉 [https://eth-infinitism.github.io/bundler-test-results-page/](https://eth-infinitism.github.io/bundler-test-results-page/)
+👉 [https://bundlers.erc4337.io/](https://bundlers.erc4337.io/)
 
 This includes:
 - A matrix of passing/failing tests for each bundler
