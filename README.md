@@ -30,7 +30,7 @@ Let’s build the future of wallets — programmable, recoverable, and user-frie
 
 ## 🔗 Resources
 
-- 🤖 Powered by [ChAAtGPT](https://chat.openai.com/g/g-1I5lA3vOt-chaatgpt) — a custom GPT focused on Account Abstraction
+- 🤖 Powered by [ChAAtGPT](https://chatgpt.com/g/g-6817474bd880819192d1bbda07958d09-chaatgpt) — a custom GPT focused on Account Abstraction
 - 🛠️ This GitBook on GitHub: [github.com/eth-infinitism/gitbook](https://github.com/eth-infinitism/gitbook)
 - 📄 License: [MIT](./LICENSE)
 
