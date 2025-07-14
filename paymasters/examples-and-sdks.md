@@ -10,6 +10,19 @@ This page highlights production-grade Paymasters and SDKs across the ecosystem. 
 
 ---
 
+## 🔧 Candide
+
+[Candide](https://www.candide.dev/instagas) provides robust, feature-rich Paymaster infrastructure to simplify gas payments:
+
+- Verifying Paymaster with custom, flexible gas policies
+- Easy Setup of gas sponsorship with a no-code interface
+- ERC-20 Paymaster that enables gas payments using stablecoins and other popular tokens 
+- Developer-Focused with generous free tier on Mainnets and a full `UserOperation` simulation tooling
+
+Candide delivers one of the most complete Paymaster solutions for developers building on account abstraction.
+
+---
+
 ## 🔧 Pimlico
 
 [Pimlico](https://docs.pimlico.io/references/paymaster) offers a robust Paymaster infrastructure:
