@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # 🧠 Smart Accounts
 
-Smart accounts are smart contract-based wallets that serve as the foundation of Account Abstraction (AA). Unlike EOAs (Externally Owned Accounts), which rely on one master private key and ECSDA only protocol-level signature checks, smart accounts embed custom logic for authentication, authorization, network fee payment, nonce management and execution.
+Smart accounts are smart contract-based wallets that serve as the foundation of Account Abstraction (AA). Unlike EOAs (Externally Owned Accounts), which rely on one master private key and ECDSA only protocol-level signature checks, smart accounts embed custom logic for authentication, authorization, network fee payment, nonce management and execution.
 
 Through the ERC-4337 standard, AA unlocks powerful UX and security features without compromising on decentralization and censorship resistance.
 
