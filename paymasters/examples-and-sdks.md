@@ -6,7 +6,18 @@ sidebar_position: 5
 
 # Paymasters: Examples and SDKs
 
-This page highlights production-grade Paymasters and SDKs across the ecosystem. These projects illustrate real-world implementations, from verifying Paymasters to ERC-20 token gas payment infrastructure.
+This page highlights production-grade Paymasters and SDKs across the ecosystem. These projects illustrate real-world implementations, from verifying Paymasters to ERC-20 token gas payment infrastructure. 
+
+> **Disclaimer:** The following list is sorted alphabetically and does not reflect any ranking or order of importance. 
+
+---
+
+## 🔧 Alchemy
+
+[Alchemy](https://www.alchemy.com/docs/gas-manager-services) provides:
+- Simplified paymaster flow in their AA SDK
+- Support for pay-per-use and freemium patterns
+- Integrated bundling and sponsorship
 
 ---
 
@@ -23,6 +34,28 @@ Candide delivers one of the most complete Paymaster solutions for developers bui
 
 ---
 
+## 🔧 Circle (USDC Paymaster)
+
+[Circle](https://www.circle.com/paymaster) announced a Paymaster that allows users to pay gas in **USDC**:
+- Native stablecoin integration
+- Focused on enterprise and wallet UX
+- Currently live on mainnet
+
+This makes stablecoin-based UX far more accessible.
+
+---
+
+# 🔧 Etherspot
+
+[Etherspot](https://etherspot.io/arka-paymaster/) includes:
+- Paymaster-as-a-service with support for verifying and quota-based modes
+- SDK integrations for onboarding and token support
+- Rollup-friendly architecture
+
+Their system integrates seamlessly with their smart wallet framework.
+
+---
+
 ## 🔧 Pimlico
 
 [Pimlico](https://docs.pimlico.io/references/paymaster) offers a robust Paymaster infrastructure:
@@ -35,36 +68,7 @@ Pimlico is among the most battle-tested paymaster providers in ERC-4337 today.
 
 ---
 
-## 🔧 Etherspot
-
-[Etherspot](https://etherspot.io/arka-paymaster/) includes:
-- Paymaster-as-a-service with support for verifying and quota-based modes
-- SDK integrations for onboarding and token support
-- Rollup-friendly architecture
-
-Their system integrates seamlessly with their smart wallet framework.
-
----
-
-## 🔧 Alchemy
-
-[Alchemy](https://www.alchemy.com/docs/gas-manager-services) provides:
-- Simplified paymaster flow in their AA SDK
-- Support for pay-per-use and freemium patterns
-- Integrated bundling and sponsorship
-
----
-
-## 🔧 Circle (USDC Paymaster)
-
-[Circle](https://www.circle.com/paymaster) announced a Paymaster that allows users to pay gas in **USDC**:
-- Native stablecoin integration
-- Focused on enterprise and wallet UX
-- Currently live on testnets with plans for expansion
-
-This makes stablecoin-based UX far more accessible.
-
----
+#
 
 ## 🔬 Visa Paymaster Experiment
 
