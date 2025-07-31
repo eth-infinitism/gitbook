@@ -2,7 +2,7 @@
 
 ## What is ERC-4337?
 
-ERC-4337 enables **Account Abstraction (AA)** on Ethereum without requiring any changes to the consensus layer. Instead of modifying Ethereum's base protocol, it introduces a new flow using `UserOperation` objects, a decentralized **alt-mempool**, and an on-chain **EntryPoint** contract.
+ERC-4337 enables **Account Abstraction (AA)** on Ethereum without requiring any changes to the protocol. Instead of modifying Ethereum's base protocol, it introduces a new flow using `UserOperation` objects, a decentralized **alt-mempool**, and an on-chain **EntryPoint** contract.
 
 This architecture unlocks powerful wallet features like:
 - ✅ Custom signature schemes (e.g. passkeys, multisig)
