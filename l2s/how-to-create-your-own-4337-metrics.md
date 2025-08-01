@@ -93,4 +93,104 @@ The resulting data shows which Paymaster application has the biggest volume of c
 
 ![](how-to-create-your-own-4337-metrics-image-8.png)
 
+## Using OSO's pyoso library for 4337 data analysis
+
+For a more streamlined approach to analyzing Account Abstraction data, you can use OSO's pyoso library which provides direct access to curated 4337 datasets across all Superchain networks. This approach eliminates the need for BigQuery setup -- and lets you connect 4337 data with 100s of other public data models.
+
+### Getting Started with pyoso
+
+First, you'll need to [get an API key](https://docs.opensource.observer/docs/get-started/python) to access the data.
+
+![](pyoso-api-key.png)
+
+Then, install the pyoso library and set up your environment:
+
+```bash
+pip install pyoso
+```
+
+Initialize the client:
+
+```python
+import pandas as pd
+from pyoso import Client
+
+# Set up the OSO client
+OSO_API_KEY = "YOUR_API_KEY"
+client = Client(api_key=OSO_API_KEY)
+```
+
+### Available 4337 Data Models
+
+OSO hosts lighter weight "staging" versions of the same tables shared above:
+
+- Enriched EntryPoint Traces (`stg_superchain__4337_traces`)
+- User Operation Logs (`stg_superchain__4337_userop_logs`)
+- OLI Address Labels (`stg_openlabelsinitiative__labels_decoded`)
+
+### Example: Analyzing Paymaster Usage
+
+Here's how to analyze paymaster usage across all Superchain networks:
+
+```python
+# Get daily paymaster usage by project and chain
+df_paymaster_usage = client.to_pandas("""
+WITH paymasters AS (
+  SELECT address
+  FROM stg_openlabelsinitiative__labels_decoded
+  WHERE tag_id = 'is_paymaster'
+),
+labeled_paymasters AS (
+  SELECT
+    address,
+    MIN(tag_value) AS owner_project
+  FROM stg_openlabelsinitiative__labels_decoded
+  WHERE
+    tag_id = 'owner_project'
+    AND address IN (SELECT address FROM paymasters)
+  GROUP BY 1
+)
+
+SELECT
+  DATE_TRUNC('DAY', block_timestamp) AS bucket_day,
+  COALESCE(p.owner_project, 'unknown') AS owner_project,
+  chain,
+  COUNT(*) AS userops_count
+FROM stg_superchain__4337_userop_logs AS logs
+LEFT JOIN labeled_paymasters AS p ON logs.paymaster_address = p.address
+GROUP BY 1,2,3
+ORDER BY bucket_day DESC, userops_count DESC
+""")
+```
+
+![](aa-by-project.png)
+
+### Example: Chain-by-Chain Activity Analysis
+
+Analyze Account Abstraction activity across different Superchain networks:
+
+```python
+# Get total activity by chain
+df_chain_totals = client.to_pandas("""
+SELECT
+  chain,
+  COUNT(*) AS total_userops,
+  COUNT(DISTINCT sender_address) AS unique_users,
+  COUNT(DISTINCT paymaster_address) AS unique_paymasters,
+  AVG(userop_gas_used) AS avg_gas_used,
+  SUM(userop_gas_used * userop_gas_price) / 1e18 AS total_gas_cost_eth
+FROM stg_superchain__4337_userop_logs
+WHERE paymaster_address != '0x0000000000000000000000000000000000000000'
+GROUP BY chain
+ORDER BY total_userops DESC
+""")
+```
+
+![](aa-by-chain.png)
+
+For a longer tutorial on Account Abstraction analysis using pyoso, check out the [Monitor Account Abstraction Adoption tutorial](https://docs.opensource.observer/docs/tutorials/account-abstraction/) which covers user operations, paymaster analysis, and cross-chain activity patterns.
+
+
+---
+
 Thanks for reading and feel free to outreach to Superchain 4337 Team in case any questions or ideas arise!
