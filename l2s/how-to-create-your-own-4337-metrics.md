@@ -101,7 +101,7 @@ For a more streamlined approach to analyzing Account Abstraction data, you can u
 
 First, you'll need to [get an API key](https://docs.opensource.observer/docs/get-started/python) to access the data.
 
-<img width="2492" height="1124" alt="image" src="https://github.com/user-attachments/assets/cbfeed2a-991f-4eeb-8215-f22a87cad8e7" />
+![](pyoso-api-key.png)
 
 Then, install the pyoso library and set up your environment:
 
@@ -163,6 +163,8 @@ ORDER BY bucket_day DESC, userops_count DESC
 """)
 ```
 
+![](aa-by-project.png)
+
 ### Example: Chain-by-Chain Activity Analysis
 
 Analyze Account Abstraction activity across different Superchain networks:
@@ -184,11 +186,11 @@ ORDER BY total_userops DESC
 """)
 ```
 
-<img width="1601" height="798" alt="image" src="https://github.com/user-attachments/assets/8fe0b494-bf4f-4ff2-8f07-ad4bf6d47393" />
-
----
+![](aa-by-chain.png)
 
 For a longer tutorial on Account Abstraction analysis using pyoso, check out the [Monitor Account Abstraction Adoption tutorial](https://docs.opensource.observer/docs/tutorials/account-abstraction/) which covers user operations, paymaster analysis, and cross-chain activity patterns.
 
+
+---
 
 Thanks for reading and feel free to outreach to Superchain 4337 Team in case any questions or ideas arise!
