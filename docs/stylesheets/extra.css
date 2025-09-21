@@ -1,0 +1,39 @@
+/* Custom blockquote styling - less faded than default */
+.md-typeset blockquote {
+    color: rgba(0, 0, 0, 0.75) !important;
+    border-left: 4px solid #42a5f5;
+    background-color: rgba(66, 165, 245, 0.08);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+    font-style: normal !important;
+}
+
+/* Dark mode blockquote styling */
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+    color: rgba(255, 255, 255, 0.85) !important;
+    background-color: rgba(66, 165, 245, 0.12);
+}
+
+/* Make blockquote text more readable */
+.md-typeset blockquote p {
+    color: inherit !important;
+    opacity: 1 !important;
+    font-style: normal !important;
+}
+
+/* Style blockquote emoji and strong text */
+.md-typeset blockquote strong,
+.md-typeset blockquote em {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+/* Override any italic styling on blockquotes */
+.md-typeset blockquote {
+    font-style: normal !important;
+}
+
+.md-typeset blockquote p {
+    font-style: normal !important;
+}
