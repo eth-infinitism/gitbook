@@ -1,0 +1,89 @@
+site_name: ERC-4337 Documentation
+site_description: "Complete guide to ERC-4337 Account Abstraction - smart accounts, bundlers, paymasters, and more"
+site_url: https://docs.erc4337.io
+
+use_directory_urls: false
+
+nav:
+  - "⭐️ Introduction": index.md
+  - "🧠 Smart Accounts":
+    - smart-accounts/README.md
+    - smart-accounts/entrypoint-explainer.md
+    - smart-accounts/session-keys-and-delegation.md
+    - smart-accounts/the-application-layer-wallets-and-sdks.md
+    - smart-accounts/modular-accounts.md
+  - "📦 Bundlers":
+    - bundlers/README.md
+    - bundlers/compatibility-test-suite.md
+    - bundlers/userop-mempool-overview.md
+    - bundlers/censorship-resistance.md
+    - bundlers/simulation-requirements.md
+    - bundlers/monitoring-and-metrics.md
+  - "💰 Paymasters":
+    - paymasters/README.md
+    - paymasters/types.md
+    - paymasters/security-and-griefing.md
+    - paymasters/design-patterns.md
+    - paymasters/examples-and-sdks.md
+  - "⛓️ L2s":
+    - l2s/README.md
+    - l2s/rip-7560.md
+    - l2s/superchain-4337-dataset-explained.md
+    - l2s/how-to-create-your-own-4337-metrics.md
+  - "🌿 Core Standards":
+    - core-standards/README.md
+    - core-standards/erc-4337.md
+    - core-standards/erc-7562.md
+    - core-standards/eip-7701.md
+    - core-standards/rip-7560.md
+    - core-standards/rip-7711.md
+    - core-standards/rip-7712.md
+  - "🤝 Community":
+    - community/README.md
+    - community/ef-grants.md
+    - community/aa-hub-devcon7.md
+    - community/bug-bounty.md
+  - "📚 Resources":
+    - resources/README.md
+    - resources/reading-material.md
+    - resources/videos.md
+    - resources/faqs.md
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - social:
+      cards_layout_options:
+        background_color: "#1e1e1e"
+        background_image: assets/images/social-background.jpeg
+        logo: assets/images/ERC-4337-team-logo-color.png
+        title_color: "#ffffff"
+        text_color: "#e0e0e0"
+  - section-index
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - codehilite
+  - tables
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.emoji
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/eth-infinitism/aa-mkdocs

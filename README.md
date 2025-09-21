@@ -1,36 +1,104 @@
-# ⭐️ Welcome to Account Abstraction with ERC-4337
+# ERC-4337 Documentation
 
-## What is ERC-4337?
+This repository contains the official documentation for ERC-4337 (Account Abstraction).
 
-ERC-4337 enables **Account Abstraction (AA)** on Ethereum without requiring any changes to the protocol. Instead of modifying Ethereum's base protocol, it introduces a new flow using `UserOperation` objects, a decentralized **alt-mempool**, and an on-chain **EntryPoint** contract.
+## 🚀 Quick Start
 
-This architecture unlocks powerful wallet features like:
-- ✅ Custom signature schemes (e.g. passkeys, multisig)
-- ✅ Gasless transactions via **Paymasters**
-- ✅ One-click flows through batched calls
-- ✅ Modular smart accounts with upgradability and recovery
-- ✅ Wallet creation without EOAs or upfront ETH
+### Local Development
 
-Unlike centralized relayer-based solutions, ERC-4337 achieves these benefits while preserving decentralization through a **permissionless mempool** and **bundler** ecosystem.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/eth-infinitism/aa-mkdocs.git
+   cd aa-mkdocs
+   ```
 
-## 🌐 Why This GitBook?
+2. **Set up Python virtual environment:**
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
 
-This GitBook serves as your technical companion to everything ERC-4337 and beyond. It consolidates specs, summaries, and best practices to help you:
-- Build or integrate **smart contract wallets**
-- Understand the **UserOperation lifecycle**
-- Leverage **Paymasters** for better onboarding
-- Explore modularity and emerging standards
-- Stay aligned with Ethereum’s decentralization ethos
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Let’s build the future of wallets — programmable, recoverable, and user-friendly — without compromising Ethereum's core values.
+4. **Serve locally:**
+   ```bash
+   mkdocs serve
+   ```
+   
+   Open http://127.0.0.1:8000 in your browser.
 
-> 📖 Start here: [Smart Accounts ➡](./smart-accounts/README.md)
+### Building
+
+To build the static site:
+
+```bash
+mkdocs build
+```
+
+The built site will be in the `site/` directory.
+
+## 🏗️ Build & Deploy
+
+This documentation is automatically built and deployed using:
+
+- **Cloudflare Pages** for hosting
+- **GitHub Actions** for CI/CD
+- **MkDocs Material** for the documentation framework
+
+### Cloudflare Pages Settings
+
+- **Build command:** `pip install -r requirements.txt && mkdocs build`
+- **Output directory:** `site`
+- **Python version:** 3.11
+- **PR Previews:** Enabled (automatic preview deployments for pull requests)
+
+### CI/CD
+
+The repository includes GitHub Actions workflow (`.github/workflows/mkdocs-ci.yml`) that:
+- Runs on every pull request to `main`
+- Installs dependencies
+- Builds the documentation with strict mode
+- Blocks PRs if build fails
+
+## 🤝 Contributing
+
+### Development Workflow
+
+1. **Fork the repository** and create a feature branch
+2. **Make your changes** to the documentation
+3. **Test locally** with `mkdocs serve`
+4. **Create a pull request** - this will trigger:
+   - CI build validation
+   - Cloudflare Pages preview deployment
+5. **Review and merge** - changes will be automatically deployed to production
+
+### Guidelines
+
+- **No web editor** - all changes must be made via pull requests
+- **Test locally** before submitting PRs
+- **Follow Markdown best practices**
+- **Update navigation** in `mkdocs.yml` if adding new sections
+- **Use descriptive commit messages**
+
+## 🔗 Links
+
+- **Production site:** https://docs.erc4337.io
+- **Repository:** https://github.com/eth-infinitism/aa-mkdocs
+- **Issues:** https://github.com/eth-infinitism/aa-mkdocs/issues
+
+
+## 🛠️ Technology Stack
+
+- **MkDocs** - Static site generator
+- **Material for MkDocs** - Theme and features
+- **Python 3.11** - Runtime environment
+- **Cloudflare Pages** - Hosting and CDN
+- **GitHub Actions** - CI/CD pipeline
 
 ---
 
-## 🔗 Resources
-
-- 🤖 Powered by [ChAAtGPT](https://chatgpt.com/g/g-6817474bd880819192d1bbda07958d09-chaatgpt) — a custom GPT focused on Account Abstraction
-- 🛠️ This GitBook on GitHub: [github.com/eth-infinitism/gitbook](https://github.com/eth-infinitism/gitbook)
-- 📄 License: [MIT](./LICENSE)
+[![Build Status](https://github.com/eth-infinitism/aa-mkdocs/workflows/Build%20Docs/badge.svg)](https://github.com/eth-infinitism/aa-mkdocs/actions)
 
