@@ -102,3 +102,4 @@ The repository includes GitHub Actions workflow (`.github/workflows/mkdocs-ci.ym
 
 [![Build Status](https://github.com/eth-infinitism/aa-mkdocs/workflows/Build%20Docs/badge.svg)](https://github.com/eth-infinitism/aa-mkdocs/actions)
 
+# Trigger Pages deployment
